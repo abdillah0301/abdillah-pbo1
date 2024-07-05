@@ -32,12 +32,12 @@ public class database {
             System.out.println(e.getMessage()); 
         } 
     }
-    public void simpanKonsumen(int id, int user, String nama, String alamat, String telpon){
+    public void simpanKonsumen(String id, String user, String nama, String alamat, String telpon){
     try{
         String sql = "insert into konsumen (id, user, nama, alamat, telpon) values (?,?,?,?,?)";
         PreparedStatement perintah = connectionDB.prepareStatement(sql);
-        perintah.setInt(1, id);
-        perintah.setInt(2, user);
+        perintah.setString(1, id);
+        perintah.setString(2, user);
         perintah.setString(3, nama);
         perintah.setString(4, alamat);
         perintah.setString(5, telpon);
@@ -188,14 +188,14 @@ public void cariUser(int idUser){
             System.err.println(e.getMessage());
         }
     }
-public void simpanOwner(int idOwner, String namaOwner, String email, int password, String noTelpon, String alamat){
+public void simpanOwner(int idOwner, String namaOwner, String email, String password, String noTelpon, String alamat){
     try{
         String sql = "insert into owner (id_owner, nama_owner, email, password, no_telpon, alamat) values (?,?,?,?,?,?)";
         PreparedStatement perintah = connectionDB.prepareStatement(sql);
         perintah.setInt(1, idOwner);
         perintah.setString(2, namaOwner);
         perintah.setString(3, email);
-        perintah.setInt(4, password);
+        perintah.setString(4, password);
         perintah.setString(5, noTelpon);
         perintah.setString(6, alamat);
         perintah.executeUpdate();

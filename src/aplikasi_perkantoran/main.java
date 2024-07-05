@@ -4,16 +4,26 @@
  */
 package aplikasi_perkantoran;
 
-import penjualan.briketarang;
-import penjualan.detailpenjualan;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 import CRUD.database;
+import penjualan.*;
+import gui.framautama;
 
-public class Aplikasi_perkantoran {
+
+public class main {
     public static void main(String[] args) {
-         database dbConnect = new database();
+      new framautama().setVisible(true);
+    }
+}
+
+
+
+
+
+
+
+//public class Aplikasi_perkantoran {
+//    public static void main(String[] args) {
+//         database dbConnect = new database();
          
 //         dbConnect.simpanKonsumen(1, 1, "abdillah", "Anjir lah", "08101018111");
 //         dbConnect.ubahKonsumen(1, 1, "dillah", "Anjir Pasar", " 000010101");
@@ -98,6 +108,5 @@ public class Aplikasi_perkantoran {
 //        for (detailpenjualan dp : penjualanList) {
 //            System.out.println(dp);
 //        }
-    }
-}
+    
 
